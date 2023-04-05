@@ -1,4 +1,4 @@
-package NavFort.utilities;
+package com.NavFort.utilities;
 
 import org.junit.*;
 import org.openqa.selenium.NoSuchElementException;

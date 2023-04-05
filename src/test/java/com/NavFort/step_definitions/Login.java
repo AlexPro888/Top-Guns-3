@@ -1,9 +1,9 @@
-package NavFort.step_definitions;
+package com.NavFort.step_definitions;
 
-import NavFort.pages.BasePage;
-import NavFort.utilities.BrowserUtils;
-import NavFort.utilities.ConfigurationReader;
-import NavFort.utilities.Driver;
+import com.NavFort.pages.BasePage;
+import com.NavFort.utilities.BrowserUtils;
+import com.NavFort.utilities.ConfigurationReader;
+import com.NavFort.utilities.Driver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;

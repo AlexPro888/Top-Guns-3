@@ -1,6 +1,6 @@
-package NavFort.pages;
+package com.NavFort.pages;
 
-import NavFort.utilities.Driver;
+import com.NavFort.utilities.Driver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;

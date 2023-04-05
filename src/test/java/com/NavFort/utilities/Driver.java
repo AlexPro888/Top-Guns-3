@@ -1,4 +1,4 @@
-package NavFort.utilities;
+package com.NavFort.utilities;
 
 import io.github.bonigarcia.wdm.*;
 import org.openqa.selenium.*;

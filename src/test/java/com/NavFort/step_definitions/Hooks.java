@@ -1,6 +1,6 @@
-package NavFort.step_definitions;
+package com.NavFort.step_definitions;
 
-import NavFort.utilities.Driver;
+import com.NavFort.utilities.Driver;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;

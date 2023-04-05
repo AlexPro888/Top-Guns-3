@@ -1,4 +1,4 @@
-package NavFort.runners;
+package com.NavFort.runners;
 
 import io.cucumber.junit.*;
 import org.junit.runner.*;
@@ -12,7 +12,7 @@ import org.junit.runner.*;
                 "me.jvt.cucumber.report.PrettyReports:target/cucumber",
         },
         features = "src/test/resources/features",
-        glue = "NavFort/step_definitions",
+        glue = "com/NavFort/step_definitions",
         dryRun = true,
         tags = "",
         publish = false

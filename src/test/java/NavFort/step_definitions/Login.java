@@ -1,16 +1,16 @@
-package cydeo.step_definitions;
+package NavFort.step_definitions;
 
-import cydeo.pages.LogIn;
-import cydeo.utilities.BrowserUtils;
-import cydeo.utilities.ConfigurationReader;
-import cydeo.utilities.Driver;
+import NavFort.pages.BasePage;
+import NavFort.utilities.BrowserUtils;
+import NavFort.utilities.ConfigurationReader;
+import NavFort.utilities.Driver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 
 public class Login {
-    LogIn login = new LogIn();
+    BasePage login = new BasePage();
 
     @Given("The user is on the login page")
     public void the_user_is_on_the_login_page() {

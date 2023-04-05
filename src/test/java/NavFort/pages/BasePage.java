@@ -1,13 +1,13 @@
-package cydeo.pages;
+package NavFort.pages;
 
-import cydeo.utilities.Driver;
+import NavFort.utilities.Driver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class LogIn {
+public class BasePage {
 
-    public LogIn(){
+    public BasePage(){
         PageFactory.initElements(Driver.getDriver(),this);
     }
 

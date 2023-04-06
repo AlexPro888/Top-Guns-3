@@ -13,8 +13,8 @@ import org.junit.runner.*;
         },
         features = "src/test/resources/features",
         glue = "com/NavFort/step_definitions",
-        dryRun = true,
-        tags = "",
+        dryRun = false,
+        tags = "@addEvent",
         publish = false
 
 )

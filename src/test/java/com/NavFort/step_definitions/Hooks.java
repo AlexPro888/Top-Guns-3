@@ -1,23 +1,37 @@
 package com.NavFort.step_definitions;
 
+import com.NavFort.pages.AddEventPage;
+import com.NavFort.pages.BasePage;
+import com.NavFort.utilities.BrowserUtils;
+import com.NavFort.utilities.ConfigurationReader;
 import com.NavFort.utilities.Driver;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
+import org.junit.BeforeClass;
+import org.junit.runner.RunWith;
+import org.junit.runners.JUnit4;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 
 import java.util.concurrent.TimeUnit;
 
 public class Hooks {
+    //@BeforeClass()
 
-    @Before
-    public void setUp(){
+    @Before()
+    public void setUp() throws InterruptedException {
        // System.out.println("\tthis is coming from BEFORE");
         Driver.getDriver().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         Driver.getDriver().manage().window().maximize();
 
+
+
     }
+
+
+
+
     @After
     public void teardownScenario(Scenario scenario){
 

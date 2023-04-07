@@ -30,10 +30,17 @@ public class BasePage {
 
     }
 
+
+    public void loginDriver(){
+        Driver.getDriver().get(ConfigurationReader.getProperty("web.table.url"));
+        BasePage login = new BasePage();
+        login.loginWithCredentials(ConfigurationReader.getProperty("web.table.username1"), ConfigurationReader.getProperty("web.table.pw1"));
+}
     public void loginStoreManager(){
         Driver.getDriver().get(ConfigurationReader.getProperty("web.table.url"));
         BasePage login = new BasePage();
         login.loginWithCredentials(ConfigurationReader.getProperty("web.table.username3"), ConfigurationReader.getProperty("web.table.pw3"));
+
 
     }
 }

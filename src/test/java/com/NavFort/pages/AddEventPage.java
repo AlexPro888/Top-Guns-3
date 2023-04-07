@@ -22,6 +22,13 @@ public class AddEventPage {
     @FindBy(xpath = "//*[.='49CAXR']")
     public WebElement car;
 
-    @FindBy(xpath = "//i[@class='fa-clock-o hide-text']")
-    public WebElement addEventbtn;
+
+    @FindBy(xpath = "(//a[@href='javascript: void(0);'])[2]")
+    public WebElement addEventBtnClick;
+
+    @FindBy(xpath = "(//div[@tabindex='-1'])[1]")
+    public WebElement AddEventPopUp;
+
+    @FindBy(xpath = "//tbody[@class='grid-body']")
+    public WebElement allCars;
 }

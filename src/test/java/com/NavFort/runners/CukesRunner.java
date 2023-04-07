@@ -14,7 +14,7 @@ import org.junit.runner.*;
         features = "src/test/resources/features",
         glue = "com/NavFort/step_definitions",
         dryRun = false,
-        tags = "@addEvent",
+        tags = "@NAV10-496",
         publish = false
 
 )

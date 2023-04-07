@@ -193,7 +193,6 @@ for given duration
      * Waits for element matching the locator to be visible on the page
      *
      * @param locator
-     * @param timeout
      * @return
      */
     public static WebElement waitForVisibility(By locator, int timeout) {

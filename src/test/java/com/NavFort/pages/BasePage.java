@@ -1,5 +1,6 @@
 package com.NavFort.pages;
 
+import com.NavFort.utilities.ConfigurationReader;
 import com.NavFort.utilities.Driver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -26,6 +27,13 @@ public class BasePage {
         this.username.sendKeys(username);
         this.password.sendKeys(password);
         this.loginBtn.click();
+
+    }
+
+    public void loginDriver(){
+        Driver.getDriver().get(ConfigurationReader.getProperty("web.table.url"));
+        BasePage login = new BasePage();
+        login.loginWithCredentials(ConfigurationReader.getProperty("web.table.username1"), ConfigurationReader.getProperty("web.table.pw1"));
 
     }
 }

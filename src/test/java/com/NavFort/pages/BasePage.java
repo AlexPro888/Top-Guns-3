@@ -8,39 +8,19 @@ import org.openqa.selenium.support.PageFactory;
 
 public class BasePage {
 
+    public static String userType;
+
+
     public BasePage(){
         PageFactory.initElements(Driver.getDriver(),this);
     }
 
-    @FindBy(xpath = "//h1[@class='oro-subtitle']")
-    public WebElement dashboard;
-    @FindBy(name = "_username")
-    public WebElement username;
-
-    @FindBy(name = "_password")
-    public WebElement password;
-
-    @FindBy(name = "_submit")
-    public WebElement loginBtn;
-
-    public void loginWithCredentials(String username, String password) {
-        this.username.sendKeys(username);
-        this.password.sendKeys(password);
-        this.loginBtn.click();
-
-    }
 
 
-    public void loginDriver(){
-        Driver.getDriver().get(ConfigurationReader.getProperty("web.table.url"));
-        BasePage login = new BasePage();
-        login.loginWithCredentials(ConfigurationReader.getProperty("web.table.username1"), ConfigurationReader.getProperty("web.table.pw1"));
-}
-    public void loginStoreManager(){
-        Driver.getDriver().get(ConfigurationReader.getProperty("web.table.url"));
-        BasePage login = new BasePage();
-        login.loginWithCredentials(ConfigurationReader.getProperty("web.table.username3"), ConfigurationReader.getProperty("web.table.pw3"));
 
 
-    }
+
+
+
+
 }

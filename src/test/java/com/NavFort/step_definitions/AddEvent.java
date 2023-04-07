@@ -1,32 +1,26 @@
 package com.NavFort.step_definitions;
-
 import com.NavFort.pages.AddEventPage;
-import com.NavFort.pages.BasePage;
+import com.NavFort.pages.LoginPage;
 import com.NavFort.utilities.BrowserUtils;
 import com.NavFort.utilities.Driver;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
-import org.junit.BeforeClass;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.Select;
-
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
-import java.util.concurrent.TimeUnit;
 
-public class AddEvent {
+public class AddEvent extends LoginPage {
 
 
-    BasePage login = new BasePage();
+
     AddEventPage addEvent = new AddEventPage();
+
 
 
     @When("The user hover over {string} button")
     public void the_user_hover_over_button(String fleetBtn) {
-        login.loginStoreManager();
+
         BrowserUtils.waitForVisibility(addEvent.fleetBtn, 5000);
         BrowserUtils.hover(addEvent.fleetBtn);
     }
@@ -38,19 +32,15 @@ public class AddEvent {
 
     @When("The user click on any vehicle")
     public void the_user_click_on_any_vehicle() {
-        BrowserUtils.waitForVisibility(addEvent.allCars, 5000);
-        List<WebElement> allCars = new ArrayList<WebElement>();
-        for (WebElement allCar : allCars) {
-            allCar.click();
-            Assert.assertTrue(addEvent.addEventBtnClick.isDisplayed());
-            Driver.getDriver().navigate().back();
+        BrowserUtils.waitForVisibility(addEvent.car, 5000);
+      addEvent.car.click();
 
 
         }
-    }
+
 
     @Then("The user can access the {string} page from the {string}")
-    public void the_user_can_access_the_page_from_the(String addEventBtn, String generalInformation) {
+    public void the_user_can_access_the_page_from_the(String addEventBtnClick, String generalInformation) {
         BrowserUtils.waitForVisibility(addEvent.addEventBtnClick, 5000);
         Assert.assertTrue(addEvent.addEventBtnClick.isDisplayed());
     }

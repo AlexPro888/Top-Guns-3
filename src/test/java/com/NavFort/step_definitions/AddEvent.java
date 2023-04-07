@@ -1,16 +1,12 @@
 package com.NavFort.step_definitions;
 import com.NavFort.pages.AddEventPage;
-import com.NavFort.pages.LoginPage;
 import com.NavFort.utilities.BrowserUtils;
-import com.NavFort.utilities.Driver;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
-import org.openqa.selenium.WebElement;
-import java.util.ArrayList;
-import java.util.List;
 
-public class AddEvent extends LoginPage {
+
+public class AddEvent {
 
 
 
@@ -46,7 +42,7 @@ public class AddEvent extends LoginPage {
     }
 
     @When("The user clicks on {string}")
-    public void the_user_clicks_on(String string) {
+    public void the_user_clicks_on(String addEventBtnClick) {
         BrowserUtils.waitForVisibility(addEvent.addEventBtnClick, 5000);
         addEvent.addEventBtnClick.click();
     }

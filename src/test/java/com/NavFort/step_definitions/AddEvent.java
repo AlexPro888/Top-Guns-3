@@ -17,7 +17,7 @@ public class AddEvent {
     @When("The user hover over {string} button")
     public void the_user_hover_over_button(String fleetBtn) {
 
-        BrowserUtils.waitForVisibility(addEvent.fleetBtn, 5000);
+        BrowserUtils.waitForVisibility(addEvent.fleetBtn, 5);
         BrowserUtils.hover(addEvent.fleetBtn);
     }
 
@@ -28,7 +28,7 @@ public class AddEvent {
 
     @When("The user click on any vehicle")
     public void the_user_click_on_any_vehicle() {
-        BrowserUtils.waitForVisibility(addEvent.car, 5000);
+        BrowserUtils.waitForVisibility(addEvent.car, 5);
       addEvent.car.click();
 
 
@@ -37,13 +37,13 @@ public class AddEvent {
 
     @Then("The user can access the {string} page from the {string}")
     public void the_user_can_access_the_page_from_the(String addEventBtnClick, String generalInformation) {
-        BrowserUtils.waitForVisibility(addEvent.addEventBtnClick, 5000);
+        BrowserUtils.waitForVisibility(addEvent.addEventBtnClick, 5);
         Assert.assertTrue(addEvent.addEventBtnClick.isDisplayed());
     }
 
     @When("The user clicks on {string}")
     public void the_user_clicks_on(String addEventBtnClick) {
-        BrowserUtils.waitForVisibility(addEvent.addEventBtnClick, 5000);
+        BrowserUtils.waitForVisibility(addEvent.addEventBtnClick, 5);
         addEvent.addEventBtnClick.click();
     }
 

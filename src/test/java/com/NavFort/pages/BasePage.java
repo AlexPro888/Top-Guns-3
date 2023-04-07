@@ -11,10 +11,7 @@ public class BasePage {
     public static String userType;
 
 
-    public BasePage(){
-        PageFactory.initElements(Driver.getDriver(),this);
-    }
-
+  
 
 
 

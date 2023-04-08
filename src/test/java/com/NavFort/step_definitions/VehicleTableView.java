@@ -16,14 +16,14 @@ import org.openqa.selenium.WebElement;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
-public class VehicleTableView {
-    BasePage login = new BasePage();
+public class VehicleTableView  {
+
     VehicleTableViewPage vehicleTableView= new VehicleTableViewPage();
 
     @When("user hover over {string} button")
     public void user_hover_over_button(String fleetBtn) {
-        login.loginDriver();
-        BrowserUtils.waitFor(5);
+
+        BrowserUtils.waitForPageToLoad(5);
         BrowserUtils.hover(vehicleTableView.fleetBtn);
     }
 
@@ -35,13 +35,13 @@ public class VehicleTableView {
 
     @Then("user should see a table with all vehicle information displayed")
     public void verifyVehicleTableDisplayed() {
-        BrowserUtils.waitFor(10);
+        BrowserUtils.waitForPageToLoad(5);
         assertTrue(vehicleTableView.vehicleTable.isDisplayed());
     }
 
     @Then("user should see the total page number displayed")
     public void user_should_see_the_total_page_number_displayed() {
-        BrowserUtils.waitFor(10);
+        BrowserUtils.waitForPageToLoad(5);
         String actualPageTotalText = vehicleTableView.pageTotal.getText();
         String expectedPageTotalText = "Of 10 |";
         assertEquals(expectedPageTotalText, actualPageTotalText);
@@ -53,7 +53,7 @@ public class VehicleTableView {
     }
     @Then("user should see the next page of vehicle information displayed")
     public void verifyNextPageDisplayed() {
-        BrowserUtils.waitFor(10);
+        BrowserUtils.waitForPageToLoad(5);
         WebElement nextPageBtn = BrowserUtils.waitForVisibility(By.xpath("//i[@class='fa-chevron-right hide-text']"), 10);
         assertTrue(nextPageBtn.isDisplayed());
     }
@@ -72,7 +72,7 @@ public class VehicleTableView {
 
     @Then("user should see total recordings of vehicles top of the table")
     public void verifyTotalRecordingsDisplayed() {
-        BrowserUtils.waitFor(10);
+        BrowserUtils.waitForPageToLoad(5);
         WebElement totalRecordsLabel = Driver.getDriver().findElement(By.xpath("//label[@class='dib' and contains(text(),'Total of')]"));
 
     }

@@ -17,11 +17,12 @@ public class VehicleTableManipulation {
 
 
 
-    @Then("user sees teh value of {string} is {int}")
-    public void userSeesTehValueOfViewPerPageIs(int arg0) {
-    VehicleTableViewPage vehicleTableViewPage = new VehicleTableViewPage();
+
+
+    @Then("user sees the value of {string} is {int}")
+    public void userSeesTheValueOfViewPerPageIs(int arg0) {
+        VehicleTableViewPage vehicleTableViewPage = new VehicleTableViewPage();
         Select vehiclePerPage = new Select(vehicleTableViewPage.viewPerPageDropdown);
         System.out.println("vehiclePerPage.getFirstSelectedOption() = " + vehiclePerPage.getFirstSelectedOption());
-
     }
 }

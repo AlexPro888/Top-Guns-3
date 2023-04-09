@@ -21,7 +21,7 @@ public class Hooks {
 
     @Before()
     public void setUp() throws InterruptedException {
-       // System.out.println("\tthis is coming from BEFORE");
+       // System.out.println("\this is coming from BEFORE");
         Driver.getDriver().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         Driver.getDriver().manage().window().maximize();
 

@@ -31,5 +31,9 @@ public class VehicleTableViewPage {
     @FindBy(xpath = "//label[@class='dib' and contains(text(),'of')][1]")
     public WebElement pageTotal;
 
-
+    public WebElement getFleetBtn() {
+        return fleetBtn;
+    }
+    @FindBy(xpath = "//button[@class='btn dropdown-toggle ']")
+    public WebElement viewPerPageDropdown;
 }

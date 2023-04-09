@@ -1,16 +1,12 @@
 package com.NavFort.step_definitions;
 
-import com.NavFort.pages.AddEventPage;
-import com.NavFort.pages.BasePage;
-import com.NavFort.utilities.BrowserUtils;
-import com.NavFort.utilities.ConfigurationReader;
+
+
 import com.NavFort.utilities.Driver;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
-import org.junit.BeforeClass;
-import org.junit.runner.RunWith;
-import org.junit.runners.JUnit4;
+
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 

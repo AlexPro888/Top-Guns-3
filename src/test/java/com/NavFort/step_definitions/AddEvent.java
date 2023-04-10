@@ -43,7 +43,7 @@ public class AddEvent {
 
     @When("The user clicks on {string}")
     public void the_user_clicks_on(String addEventBtnClick) {
-        BrowserUtils.waitForVisibility(addEvent.addEventBtnClick, 5);
+        BrowserUtils.waitFor(5);
         addEvent.addEventBtnClick.click();
     }
 

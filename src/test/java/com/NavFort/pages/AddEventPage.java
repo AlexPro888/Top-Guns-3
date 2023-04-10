@@ -23,7 +23,7 @@ public class AddEventPage {
     public WebElement car;
 
 
-    @FindBy(xpath = "(//a[@href='javascript: void(0);'])[2]")
+    @FindBy(xpath = "//a[@class ='btn icons-holder-text no-hash']")
     public WebElement addEventBtnClick;
 
     @FindBy(xpath = "(//div[@tabindex='-1'])[1]")

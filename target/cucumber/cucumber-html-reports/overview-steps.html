@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.tablesorter.min.js"></script>
+<script src="js/Chart.min.js"></script>
+<script src="js/moment.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
+<link rel="stylesheet" href="css/cucumber.css" type="text/css"/>
+<link rel="stylesheet" href="css/font-awesome.min.css"/>
+<link rel="shortcut icon" href="images/favicon.png"/>
+
+<script>
+$(document).ready(function() {
+    // this will tell tablesorter to try looking for the data-value attribute
+    // if present, it'll sort by that instead
+    // otherwise, it'll sort by the text content of the table cell
+    $("#tablesorter").tablesorter({
+        textAttribute: 'data-value',
+        // ignores the first row of the header, the 'scenario', 'steps', since
+        // sorting those doesn't make sense
+        selectorHeaders: '> thead tr:not(.dont-sort) th',
+        // use a stable sort
+        sortStable: true
+    });
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+<title>Cucumber Reports  - Steps Overview</title>
+
+</head>
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navigation">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse">
+      <p class="navbar-text navbar-left">Cucumber Report</p>
+      <ul class="nav navbar-nav navbar-right">
+        <li role="presentation" ><a href="overview-features.html">Features</a></li>
+        <li role="presentation" ><a href="overview-tags.html">Tags</a></li>
+        <li role="presentation"     class="active" ><a href="overview-steps.html">Steps</a></li>
+        <li role="presentation" ><a href="overview-failures.html">Failures</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<div class="container-fluid">
+  <div class="col-md-5 col-md-offset-1">
+
+<table class="table table-bordered" id="build-info">
+  <thead>
+    <tr>
+      <th>Project</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="info">
+      <td>No Name (add projectName to cucumber-reporting.properties)</td>
+      <td>09 Apr 2023, 14:09</td>
+    </tr>
+  </tbody>
+</table>
+
+  </div>
+  <div class="col-md-3 col-md-offset-2">
+  </div>
+</div>
+
+
+<div id="report-lead" class="container-fluid">
+  <div class="col-md-10 col-md-offset-1">
+    <h2>Steps Statistics</h2>
+      <p>The following graph shows step statistics for this build. Below list is based on results.
+ step does not provide information about result then is not listed below.
+ Additionally @Before and @After are not counted because they are part of the scenarios, not steps.</p>
+  </div>
+</div>
+
+<div class="container-fluid" id="report">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <table id="tablesorter" class="stats-table table-hover">
+
+        <thead>
+          <tr class="header">
+            <th>Implementation</th>
+            <th>Occurrences</th>
+            <th>Average duration</th>
+            <th>Max duration</th>
+            <th>Total durations</th>
+            <th>Ratio</th>
+          </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+              <td class="location">com.NavFort.step_definitions.AddEvent.the_page_should_pop_up(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="42000">0.000</td>
+              <td class="duration" data-value="42000">0.000</td>
+              <td class="duration" data-value="42000">0.000</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.NavFort.step_definitions.AddEvent.the_user_can_access_the_page_from_the(java.lang.String,java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="743752000">0.743</td>
+              <td class="duration" data-value="743752000">0.743</td>
+              <td class="duration" data-value="743752000">0.743</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.NavFort.step_definitions.AddEvent.the_user_click_on_any_vehicle()</td>
+              <td>2</td>
+              <td class="duration" data-value="563279500">0.563</td>
+              <td class="duration" data-value="563279500">1.126</td>
+              <td class="duration" data-value="1126559000">1.126</td>
+              <td class="failed">50.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.NavFort.step_definitions.AddEvent.the_user_clicks_on(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="64000">0.000</td>
+              <td class="duration" data-value="64000">0.000</td>
+              <td class="duration" data-value="64000">0.000</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.NavFort.step_definitions.AddEvent.the_user_clicks_on_button(java.lang.String)</td>
+              <td>2</td>
+              <td class="duration" data-value="161299000">0.161</td>
+              <td class="duration" data-value="161299000">0.322</td>
+              <td class="duration" data-value="322598000">0.322</td>
+              <td class="failed">50.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.NavFort.step_definitions.AddEvent.the_user_hover_over_button(java.lang.String)</td>
+              <td>2</td>
+              <td class="duration" data-value="77350000">0.077</td>
+              <td class="duration" data-value="77350000">0.154</td>
+              <td class="duration" data-value="154700000">0.154</td>
+              <td class="failed">50.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.NavFort.step_definitions.DriverFilter.user_clicks_vehicles_function_under_the_fleet_menu()</td>
+              <td>1</td>
+              <td class="duration" data-value="65000">0.000</td>
+              <td class="duration" data-value="65000">0.000</td>
+              <td class="duration" data-value="65000">0.000</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.NavFort.step_definitions.DriverFilter.user_is_on_the_dashboard_page()</td>
+              <td>1</td>
+              <td class="duration" data-value="165000">0.000</td>
+              <td class="duration" data-value="165000">0.000</td>
+              <td class="duration" data-value="165000">0.000</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.NavFort.step_definitions.DriverFilter.user_sees_and_selects_the_driver_filter_from_dropdown_menu()</td>
+              <td>1</td>
+              <td class="duration" data-value="50000">0.000</td>
+              <td class="duration" data-value="50000">0.000</td>
+              <td class="duration" data-value="50000">0.000</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.NavFort.step_definitions.DriverFilter.users_click_the_manage_filters_title()</td>
+              <td>1</td>
+              <td class="duration" data-value="51000">0.000</td>
+              <td class="duration" data-value="51000">0.000</td>
+              <td class="duration" data-value="51000">0.000</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.NavFort.step_definitions.Hooks.setUp()</td>
+              <td>7</td>
+              <td class="duration" data-value="1408326428">1.408</td>
+              <td class="duration" data-value="1408326428">1.943</td>
+              <td class="duration" data-value="9858285000">9.858</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.NavFort.step_definitions.Hooks.teardownScenario(io.cucumber.java.Scenario)</td>
+              <td>7</td>
+              <td class="duration" data-value="177651142">0.177</td>
+              <td class="duration" data-value="177651142">0.393</td>
+              <td class="duration" data-value="1243558000">1.243</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.NavFort.step_definitions.LoginStepDef.the_user_is_on_the_login_page()</td>
+              <td>2</td>
+              <td class="duration" data-value="1065138500">1.065</td>
+              <td class="duration" data-value="1065138500">1.070</td>
+              <td class="duration" data-value="2130277000">2.130</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.NavFort.step_definitions.LoginStepDef.the_user_is_on_the_page(java.lang.String)</td>
+              <td>2</td>
+              <td class="duration" data-value="1035037500">1.035</td>
+              <td class="duration" data-value="1035037500">1.036</td>
+              <td class="duration" data-value="2070075000">2.070</td>
+              <td class="failed">50.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.NavFort.step_definitions.LoginStepDef.the_user_logs_in_as_a(java.lang.String)</td>
+              <td>2</td>
+              <td class="duration" data-value="1229388500">1.229</td>
+              <td class="duration" data-value="1229388500">1.338</td>
+              <td class="duration" data-value="2458777000">2.458</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.NavFort.step_definitions.VehicleTableView.clickNextPageButton()</td>
+              <td>1</td>
+              <td class="duration" data-value="258418000">0.258</td>
+              <td class="duration" data-value="258418000">0.258</td>
+              <td class="duration" data-value="258418000">0.258</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.NavFort.step_definitions.VehicleTableView.clickPreviousPageButton()</td>
+              <td>1</td>
+              <td class="duration" data-value="33326000">0.033</td>
+              <td class="duration" data-value="33326000">0.033</td>
+              <td class="duration" data-value="33326000">0.033</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.NavFort.step_definitions.VehicleTableView.loginAsDriver(java.lang.String)</td>
+              <td>4</td>
+              <td class="duration" data-value="945655000">0.945</td>
+              <td class="duration" data-value="945655000">0.974</td>
+              <td class="duration" data-value="3782620000">3.782</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.NavFort.step_definitions.VehicleTableView.user_clicks_on_button(java.lang.String)</td>
+              <td>4</td>
+              <td class="duration" data-value="58739000">0.058</td>
+              <td class="duration" data-value="58739000">0.099</td>
+              <td class="duration" data-value="234956000">0.234</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.NavFort.step_definitions.VehicleTableView.user_hover_over_button(java.lang.String)</td>
+              <td>4</td>
+              <td class="duration" data-value="128707250">0.128</td>
+              <td class="duration" data-value="128707250">0.135</td>
+              <td class="duration" data-value="514829000">0.514</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.NavFort.step_definitions.VehicleTableView.user_is_on_the_login_page()</td>
+              <td>4</td>
+              <td class="duration" data-value="985964500">0.985</td>
+              <td class="duration" data-value="985964500">1.046</td>
+              <td class="duration" data-value="3943858000">3.943</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.NavFort.step_definitions.VehicleTableView.user_should_see_the_total_page_number_displayed()</td>
+              <td>2</td>
+              <td class="duration" data-value="1454119500">1.454</td>
+              <td class="duration" data-value="1454119500">1.457</td>
+              <td class="duration" data-value="2908239000">2.908</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.NavFort.step_definitions.VehicleTableView.verifyNextPageDisplayed()</td>
+              <td>1</td>
+              <td class="duration" data-value="19591000">0.019</td>
+              <td class="duration" data-value="19591000">0.019</td>
+              <td class="duration" data-value="19591000">0.019</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.NavFort.step_definitions.VehicleTableView.verifyPageDisplayed(java.lang.String)</td>
+              <td>4</td>
+              <td class="duration" data-value="965612500">0.965</td>
+              <td class="duration" data-value="965612500">1.119</td>
+              <td class="duration" data-value="3862450000">3.862</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.NavFort.step_definitions.VehicleTableView.verifyPreviousPageDisplayed()</td>
+              <td>1</td>
+              <td class="duration" data-value="23188000">0.023</td>
+              <td class="duration" data-value="23188000">0.023</td>
+              <td class="duration" data-value="23188000">0.023</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.NavFort.step_definitions.VehicleTableView.verifyTotalRecordingsDisplayed()</td>
+              <td>1</td>
+              <td class="duration" data-value="1509687000">1.509</td>
+              <td class="duration" data-value="1509687000">1.509</td>
+              <td class="duration" data-value="1509687000">1.509</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.NavFort.step_definitions.VehicleTableView.verifyVehicleTableDisplayed()</td>
+              <td>1</td>
+              <td class="duration" data-value="1293427000">1.293</td>
+              <td class="duration" data-value="1293427000">1.293</td>
+              <td class="duration" data-value="1293427000">1.293</td>
+              <td class="passed">100.00%</td>
+            </tr>
+        </tbody>
+
+        <tfoot class="total">
+          <tr>
+            <td>27</td>
+            <td>61</td>
+            <td class="duration">0.631</td>
+            <td class="duration">9.858</td>
+            <td class="duration">38.493</td>
+            <td>Totals</td>
+          </tr>
+        </tfoot>
+
+      </table>
+    </div>
+  </div>
+</div>
+
+
+<nav class="navbar navbar-default" id="footer">
+  <div class="container-fluid">
+    <p class="navbar-text navbar-right">
+        <small>generate Cucumber HTML reports via:&nbsp;</small>
+        <a class="navbar-link" href="https://github.com/jenkinsci/cucumber-reports-plugin">Jenkins Plugin</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-reporting">Standalone</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-sandwich">Sandwich</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/maven-cucumber-reporting">Maven</a>
+        &nbsp;&nbsp;
+    </p>
+  </div>
+</nav>
+
+</body>
+</html>

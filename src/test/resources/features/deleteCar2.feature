@@ -1,5 +1,6 @@
 Feature: As a 'Store Manager', I should be able to delete a car
-  Background: Given the user is already logged in as store manager
+  Background:
+    Given the user is already logged in as store manager
 
   Scenario:  the user should see the  "Delete"  button on the "General Information" page
     Given the user is on the Fleet/Vehicles page

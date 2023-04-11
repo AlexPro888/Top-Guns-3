@@ -5,8 +5,8 @@ Feature: As a 'Store Manager', I should be able to delete a car
 
 
   @NAV10-503
-  Scenario:  the user should see the  "Delete"  button on the "General Information" page
-    Given the user is on the Fleet/Vehicles page
+  Scenario:  the user should see the Delete button on the General Information page
+    Given the user is on the Fleet Vehicles page
     When the user clicks on any of the vehicles row
     Then the user is redirected to General Information page
     And the user should see the Delete button on the General information page

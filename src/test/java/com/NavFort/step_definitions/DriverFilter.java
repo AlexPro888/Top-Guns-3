@@ -26,13 +26,13 @@ public class DriverFilter {
 
     @When("The user hover over Fleet button")
     public void theUserHoverOverFleetButton() {
-        BrowserUtils.waitForVisibility(driverFilter.fleetBtn, 10);
+        BrowserUtils.waitForVisibility(driverFilter.fleetBtn, 15);
         BrowserUtils.hover(driverFilter.fleetBtn);
     }
 
     @And("The user clicks on Vehicles button")
     public void theUserClicksOnVehiclesButton() {
-        BrowserUtils.waitForVisibility(driverFilter.vehicleBtn, 10);
+        BrowserUtils.waitForVisibility(driverFilter.vehicleBtn, 16);
         driverFilter.vehicleBtn.click();
     }
 
@@ -96,15 +96,16 @@ public class DriverFilter {
 
     @When("User clicks update button")
     public void user_clicks_update_button() {
+        BrowserUtils.waitFor(5);
         driverFilter.updateButton.click();
 
 
     }
 
 
-
     @Then("Results should starts with specified {string}")
     public void results_should_starts_with_specified(String keyword) {
+        BrowserUtils.waitFor(5);
         driverFilter.verifyStartsWith(keyword);
     }
 
@@ -112,6 +113,7 @@ public class DriverFilter {
 
     @Then("Results should end with specified {string}")
     public void results_should_end_with_specified(String keyword) {
+        BrowserUtils.waitFor(5);
        driverFilter.verifyEndsWith(keyword);
     }
 

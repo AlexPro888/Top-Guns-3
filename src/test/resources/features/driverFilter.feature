@@ -1,12 +1,12 @@
-
+@NAV10-516
 Feature: As a Driver, I should be able to use the Driver filter
 
   Background:  The user is already logged in as a driver
     Given The user is on the login page
     Then The user logs in as a "driver"
 
-  @wip
-  Scenario: The user can all the methods under Driver Filter menu
+@NAV10-513
+  Scenario: The user can see all the methods under the Driver Filter menu
     When The user hover over Fleet button
     And The user clicks on Vehicles button
     And The user can access the Manage Filters button
@@ -25,6 +25,7 @@ Feature: As a Driver, I should be able to use the Driver filter
       | Is Empty         |
       | Is Not Empty     |
 
+@NAV10-514
   Scenario Outline: The user should correctly use "Starts-with" method
 
     When The user hover over Fleet button
@@ -39,11 +40,11 @@ Feature: As a Driver, I should be able to use the Driver filter
     Then Results should starts with specified "<keyword>"
     Examples:
       | keyword |
-      | Mrs     |
+      | An      |
       | Ms      |
-      | Jacki   |
 
-  Scenario Outline:The user should correctly use "Ends-with" method
+@NAV10-515
+Scenario Outline:The user should correctly use "Ends-with" method
 
     When The user hover over Fleet button
     And The user clicks on Vehicles button
@@ -58,9 +59,9 @@ Feature: As a Driver, I should be able to use the Driver filter
 
     Examples:
       | keyword |
-      | Price   |
       | an      |
-      | ohns    |
+      | ohn     |
+
 
 
 

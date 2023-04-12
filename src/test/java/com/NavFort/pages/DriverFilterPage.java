@@ -92,8 +92,9 @@ public class DriverFilterPage {
         int rowCount = Driver.getDriver().findElements(By.xpath("//tbody//tr")).size();
         List<String> trowsText = new ArrayList<>();
         for (int i = 1; i <= rowCount; i++) {
-            trowsText.add(Driver.getDriver().findElement(By.xpath("//tbody//tr[" + i + "]//td[4]")).getText().toLowerCase());
+            trowsText.add(Driver.getDriver().findElement(By.xpath("//tbody//tr[" + i + "]//td[2]")).getText());
         }
+
         return trowsText;
     }
 

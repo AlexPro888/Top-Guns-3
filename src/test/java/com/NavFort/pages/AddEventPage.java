@@ -8,6 +8,8 @@ import org.openqa.selenium.interactions.Keyboard;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import javax.xml.xpath.XPath;
+
 public class AddEventPage {
     public AddEventPage() {
         PageFactory.initElements(Driver.getDriver(), this);
@@ -19,16 +21,42 @@ public class AddEventPage {
     @FindBy(xpath = "(//span[@class='title title-level-2'])[3]")
     public WebElement vehicleBtn;
 
-    @FindBy(xpath = "//*[.='49CAXR']")
+    @FindBy(xpath = "//tbody/tr")
     public WebElement car;
 
 
-    @FindBy(xpath = "//a[@class ='btn icons-holder-text no-hash']")
+    @FindBy(css = "a[title='Add an event to this record']")
     public WebElement addEventBtnClick;
 
-    @FindBy(xpath = "(//div[@tabindex='-1'])[1]")
+    @FindBy(xpath = "//button[@title='close']")
+    public WebElement closeEventBtn;
+
+    @FindBy(xpath = "//div[@role='dialog']")
     public WebElement AddEventPopUp;
 
-    @FindBy(xpath = "//tbody[@class='grid-body']")
-    public WebElement allCars;
+
+    @FindBy(xpath = "(//label[@class='required'])[1]")
+    public WebElement titleField;
+
+    @FindBy(xpath = "(//label[@class='required'])[2]")
+    public WebElement ownerField;
+
+    @FindBy(xpath = "(//label[@class='required'])[3]")
+    public WebElement organizerDisplayNameField;
+
+    @FindBy(xpath = "(//label[@class='required'])[4]")
+    public WebElement organiserEmailField;
+
+    @FindBy(xpath = "(//label[@class='required'])[5]")
+    public WebElement startDateField;
+
+    @FindBy(xpath = "(//label[@class='required'])[6]")
+    public WebElement endtDateField;
+
+
+
 }
+
+
+
+

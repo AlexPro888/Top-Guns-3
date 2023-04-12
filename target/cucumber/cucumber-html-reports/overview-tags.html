@@ -48,32 +48,32 @@ $(document).ready(function() {
 $(document).ready(function() {
 
     var chartData = {
-        labels:  [ "@NAV10-226",  "@NAV10-489",  "@NAV10-491",  "@NAV10-492",  "@NAV10-493",  "@NAV10-494",  "@NAV10-495",  "@NAV10-496", ] ,
+        labels:  [ "@NAV10-226",  "@NAV10-489",  "@NAV10-496",  "@NAV10-510", ] ,
         datasets: [
             {
                 label: "Passed",
                 backgroundColor: "#92DD96",
-                data:  [ 44.44,  100.00,  100.00,  100.00,  100.00,  100.00,  100.00,  0.00, ] 
+                data:  [ 100.00,  100.00,  100.00,  100.00, ] 
             },
             {
                 label: "Failed",
                 backgroundColor: "#F2928C",
-                data:  [ 0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00, ] 
+                data:  [ 0.00,  0.00,  0.00,  0.00, ] 
             },
             {
                 label: "Skipped",
                 backgroundColor: "#8AF",
-                data:  [ 55.56,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  100.00, ] 
+                data:  [ 0.00,  0.00,  0.00,  0.00, ] 
             },
             {
                 label: "Pending",
                 backgroundColor: "#F5F28F",
-                data:  [ 0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00, ] 
+                data:  [ 0.00,  0.00,  0.00,  0.00, ] 
             },
             {
                 label: "Undefined",
                 backgroundColor: "#F5B975",
-                data:  [ 0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00,  0.00, ] 
+                data:  [ 0.00,  0.00,  0.00,  0.00, ] 
             }
         ]
     };
@@ -133,7 +133,7 @@ $(document).ready(function() {
   <tbody>
     <tr class="info">
       <td>No Name (add projectName to cucumber-reporting.properties)</td>
-      <td>09 Apr 2023, 14:09</td>
+      <td>12 Apr 2023, 21:44</td>
     </tr>
   </tbody>
 </table>
@@ -197,171 +197,103 @@ $(document).ready(function() {
       <tr>
         <td class="tagname"><a href="report-tag_991001546.html">@NAV10-226</a></td>
 
-        <td      class="passed"    >4</td>
-        <td >0</td>
-        <td     class="skipped"   >5</td>
+        <td      class="passed"    >8</td>
         <td >0</td>
         <td >0</td>
-        <td class="total">9</td>
+        <td >0</td>
+        <td >0</td>
+        <td class="total">8</td>
 
-        <td  class="passed"    >1</td>
-        <td  class="failed"    >1</td>
-        <td class="total">2</td>
+        <td  class="passed"    >3</td>
+        <td >0</td>
+        <td class="total">3</td>
 
-        <td class="duration" data-value="2347715000">2.347</td>
-        <td class="failed">Failed</td>
+        <td class="duration" data-value="70778887000">1:10.778</td>
+        <td class="passed">Passed</td>
       </tr>
       <tr>
         <td class="tagname"><a href="report-tag_991003657.html">@NAV10-489</a></td>
 
-        <td      class="passed"    >4</td>
+        <td      class="passed"    >2</td>
         <td >0</td>
         <td >0</td>
         <td >0</td>
         <td >0</td>
-        <td class="total">4</td>
+        <td class="total">2</td>
 
         <td  class="passed"    >1</td>
         <td >0</td>
         <td class="total">1</td>
 
-        <td class="duration" data-value="2347101000">2.347</td>
-        <td class="passed">Passed</td>
-      </tr>
-      <tr>
-        <td class="tagname"><a href="report-tag_991003680.html">@NAV10-491</a></td>
-
-        <td      class="passed"    >3</td>
-        <td >0</td>
-        <td >0</td>
-        <td >0</td>
-        <td >0</td>
-        <td class="total">3</td>
-
-        <td  class="passed"    >1</td>
-        <td >0</td>
-        <td class="total">1</td>
-
-        <td class="duration" data-value="1516323000">1.516</td>
-        <td class="passed">Passed</td>
-      </tr>
-      <tr>
-        <td class="tagname"><a href="report-tag_991003681.html">@NAV10-492</a></td>
-
-        <td      class="passed"    >3</td>
-        <td >0</td>
-        <td >0</td>
-        <td >0</td>
-        <td >0</td>
-        <td class="total">3</td>
-
-        <td  class="passed"    >1</td>
-        <td >0</td>
-        <td class="total">1</td>
-
-        <td class="duration" data-value="1607603000">1.607</td>
-        <td class="passed">Passed</td>
-      </tr>
-      <tr>
-        <td class="tagname"><a href="report-tag_991003682.html">@NAV10-493</a></td>
-
-        <td      class="passed"    >7</td>
-        <td >0</td>
-        <td >0</td>
-        <td >0</td>
-        <td >0</td>
-        <td class="total">7</td>
-
-        <td  class="passed"    >1</td>
-        <td >0</td>
-        <td class="total">1</td>
-
-        <td class="duration" data-value="1990496000">1.990</td>
-        <td class="passed">Passed</td>
-      </tr>
-      <tr>
-        <td class="tagname"><a href="report-tag_991003683.html">@NAV10-494</a></td>
-
-        <td      class="passed"    >3</td>
-        <td >0</td>
-        <td >0</td>
-        <td >0</td>
-        <td >0</td>
-        <td class="total">3</td>
-
-        <td  class="passed"    >1</td>
-        <td >0</td>
-        <td class="total">1</td>
-
-        <td class="duration" data-value="1681239000">1.681</td>
-        <td class="passed">Passed</td>
-      </tr>
-      <tr>
-        <td class="tagname"><a href="report-tag_991003684.html">@NAV10-495</a></td>
-
-        <td      class="passed"    >16</td>
-        <td >0</td>
-        <td >0</td>
-        <td >0</td>
-        <td >0</td>
-        <td class="total">16</td>
-
-        <td  class="passed"    >4</td>
-        <td >0</td>
-        <td class="total">4</td>
-
-        <td class="duration" data-value="6795661000">6.795</td>
+        <td class="duration" data-value="21167628000">21.167</td>
         <td class="passed">Passed</td>
       </tr>
       <tr>
         <td class="tagname"><a href="report-tag_991003685.html">@NAV10-496</a></td>
 
+        <td      class="passed"    >3</td>
         <td >0</td>
         <td >0</td>
-        <td     class="skipped"   >5</td>
         <td >0</td>
         <td >0</td>
-        <td class="total">5</td>
+        <td class="total">3</td>
 
+        <td  class="passed"    >1</td>
         <td >0</td>
-        <td  class="failed"    >1</td>
         <td class="total">1</td>
 
-        <td class="duration" data-value="614000">0.000</td>
-        <td class="failed">Failed</td>
+        <td class="duration" data-value="22255859000">22.255</td>
+        <td class="passed">Passed</td>
+      </tr>
+      <tr>
+        <td class="tagname"><a href="report-tag_991004392.html">@NAV10-510</a></td>
+
+        <td      class="passed"    >3</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td class="total">3</td>
+
+        <td  class="passed"    >1</td>
+        <td >0</td>
+        <td class="total">1</td>
+
+        <td class="duration" data-value="27355400000">27.355</td>
+        <td class="passed">Passed</td>
       </tr>
   </tbody>
 
   <tfoot class="total">
     <tr>
       <td></td>
-      <td>40</td>
-      <td>0</td>
-      <td>10</td>
+      <td>16</td>
       <td>0</td>
       <td>0</td>
-      <td>50</td>
+      <td>0</td>
+      <td>0</td>
+      <td>16</td>
 
-      <td>9</td>
-      <td>3</td>
-      <td>12</td>
+      <td>6</td>
+      <td>0</td>
+      <td>6</td>
 
-      <td class="duration">18.286</td>
-      <td>8</td>
+      <td class="duration">2:21.557</td>
+      <td>4</td>
     </tr>
     <tr>
       <td></td>
-      <td>80.00%</td>
+      <td>100.00%</td>
       <td>0.00%</td>
-      <td>20.00%</td>
+      <td>0.00%</td>
       <td>0.00%</td>
       <td>0.00%</td>
       <td></td>
-      <td>75.00%</td>
-      <td>25.00%</td>
+      <td>100.00%</td>
+      <td>0.00%</td>
       <td></td>
       <td></td>
-      <td>66.67%</td>
+      <td>100.00%</td>
     </tr>
   </tfoot>
 </table>

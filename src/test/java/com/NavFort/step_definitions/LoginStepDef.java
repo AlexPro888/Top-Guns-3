@@ -25,7 +25,7 @@ public class LoginStepDef {
 
     @Then("The user is on the {string} page")
     public void the_user_is_on_the_page(String expectedTitle) {
-        BrowserUtils.waitForPageToLoad(10);
+        BrowserUtils.waitFor(5);
         String actualTitle = loginPage.getSubtitle();
         Assert.assertEquals(expectedTitle, actualTitle);
     }

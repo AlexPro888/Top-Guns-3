@@ -21,8 +21,9 @@ public class VehicleTableManipulation {
     }
 
     @Then("View Per Page value is {int}")
-    public void view_per_page_value_is(Integer int1) {
+    public void view_per_page_value_is (Integer int1) {
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 10);
+
         wait.until(ExpectedConditions.visibilityOf(vehicleTableViewPage.viewPerPageButton));
 
         String expectedDefaultValue = "25";
@@ -50,15 +51,17 @@ public class VehicleTableManipulation {
 
     @And("user clicks on the Model Year column")
     public void userClicksOnTheModelYearColumn() {
-        BrowserUtils.sleep(2);
+        WebDriverWait wait=new WebDriverWait(Driver.getDriver(),10);
+        wait.until(ExpectedConditions.visibilityOf(vehicleTableViewPage.modelYear));
+        wait.until(ExpectedConditions.elementToBeClickable(vehicleTableViewPage.modelYear));
         vehicleTableViewPage.modelYear.click();
-
+        BrowserUtils.sleep(2);
 
     }
 
     @Then("Model Year column is in ascending order")
     public void modelYearColumnIsInAscendingOrder() {
-        BrowserUtils.sleep(2);
+        BrowserUtils.sleep(4);
         int firstRecordedYearValue = Integer.parseInt(vehicleTableViewPage.firstRecordedYear.getText());
         int lastRecordedYearValue = Integer.parseInt(vehicleTableViewPage.lastRecordedYear.getText());
         Assert.assertTrue(firstRecordedYearValue<lastRecordedYearValue);

@@ -95,28 +95,7 @@ public class FilterMenuGeneral {
 
     @Then("The user should see manage filters menu's contains filters")
     public void theUserShouldSeeManageFiltersMenuSContainsFilters() {
-        /*
-        assertEquals("License Plate",fMGeneral.filters.get(0).getText().trim());
-        assertEquals("Tags",fMGeneral.filters.get(1).getText().trim());
-        assertEquals("Driver",fMGeneral.filters.get(2).getText().trim());
-        assertEquals("Location",fMGeneral.filters.get(3).getText().trim());
-        assertEquals("Chassis Number",fMGeneral.filters.get(4).getText().trim());
-        assertEquals("Model Year",fMGeneral.filters.get(5).getText().trim());
-        assertEquals("Last Odometer",fMGeneral.filters.get(6).getText().trim());
-        assertEquals("Immatriculation Date",fMGeneral.filters.get(7).getText().trim());
-        assertEquals("First Contract Date",fMGeneral.filters.get(8).getText().trim());
-        assertEquals("Catalog Value (VAT Incl.)",fMGeneral.filters.get(9).getText().trim());
-        assertEquals("Seats Number",fMGeneral.filters.get(10).getText().trim());
-        assertEquals("Doors Number",fMGeneral.filters.get(11).getText().trim());
-        assertEquals("Color",fMGeneral.filters.get(12).getText().trim());
-        assertEquals("Transmission",fMGeneral.filters.get(13).getText().trim());
-        assertEquals("Fuel Type",fMGeneral.filters.get(14).getText().trim());
-        assertEquals("CO2 Emissions",fMGeneral.filters.get(15).getText().trim());
-        assertEquals("Horsepower",fMGeneral.filters.get(16).getText().trim());
-        assertEquals("Horsepower Taxation",fMGeneral.filters.get(17).getText().trim());
-        assertEquals("Power (KW)",fMGeneral.filters.get(18).getText().trim());
 
-         */
 
         List<String> expectedFilters= Arrays.asList("License Plate","Tags","Driver","Location","Chassis Number","Model Year","Last Odometer","Immatriculation Date","First Contract Date","Catalog Value (VAT Incl.)","Seats Number","Doors Number","Color","Transmission","Fuel Type","CO2 Emissions","Horsepower","Horsepower Taxation","Power (KW)");
 

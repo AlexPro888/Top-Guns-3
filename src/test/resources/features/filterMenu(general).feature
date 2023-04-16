@@ -42,4 +42,16 @@ Feature: Filter Menu(General)
       | Store Manager | Horsepower  |
 
 
+  Scenario Outline: The user can apply multiple filters at the same time
+    Given The "<userType>" is already on the Fleet Management page
+    When  The "<userType>" is click the fleet menu and than click vehicles button
+    And   The user click the filter icon
+    And   The user click "Manage filters" button
+    And   The user click on "Tags" ,"Location" , "Horsepower"
+    Then  Verify that "Tags", "Location" and "Horsepower" options are selected
+    Examples:
+      | userType      |
+      | Driver        |
+      | Sales Manager |
+      | Store Manager |
 

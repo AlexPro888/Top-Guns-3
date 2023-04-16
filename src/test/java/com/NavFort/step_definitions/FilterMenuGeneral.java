@@ -128,63 +128,8 @@ public class FilterMenuGeneral {
 
         }
 
-
-       /*
-        List<String> filters= Arrays.asList("License Plate","Tags","Driver","Location","Chassis Number","Model Year","Last Odometer","Immatriculation Date","First Contract Date","Catalog Value(VAT Incl)","Seats Number","Doors Number","Color","Transmission","Fuel Type","CO2 Emissions","Horsepower","HorsepowerTaxation","Power(kW)");
-         int expectedSize = filters.size();
-         int actualSize= fMGeneral.filters.size();
-         Assert.assertEquals(expectedSize,actualSize);
-
-        */
-    }
-    /*
-    @And("The user types {string} on the filter input box")
-    public void theUserTypesOnTheFilterInputBox(String filtersName) {
-        fMGeneral.filterSearchBox.sendKeys(filtersName);
-
     }
 
-
-
-    @Then("The user should see {string} on the filters menu board")
-    public void theUserShouldSeeOnTheFiltersMenuBoard(String filtersName) {
-        List < String> filNames= new ArrayList<>();
-        for (WebElement filter : fMGeneral.filters) {
-            filNames.add(filter.getText().trim());
-        }
-      assertTrue(filNames.contains(filtersName));
-
-    }
-
-     */
-
-    @Given("The {string} is already on the Fleet Management page and click the fleet menu and than click vehicles button")
-    public void theIsAlreadyOnTheFleetManagementPageAndClickTheFleetMenuAndThanClickVehiclesButton(String userType) {
-        Driver.getDriver().get(ConfigurationReader.getProperty("url"));
-        if (userType.equalsIgnoreCase("Driver")){
-            lgnP.usernameField.sendKeys(ConfigurationReader.getProperty("driver.username"));
-            lgnP.passwordField.sendKeys(ConfigurationReader.getProperty("all.pw"));
-            lgnP.loginBtn.click();
-            BrowserUtils.waitForPresenceOfElement(By.className("oro-subtitle"),25);
-            fMGeneral.driverFleetBtn.click();
-            fMGeneral.vehiclesBtn.click();
-        } else if (userType.equalsIgnoreCase("Sales Manager")) {
-            lgnP.usernameField.sendKeys(ConfigurationReader.getProperty("salesmanager.username"));
-            lgnP.passwordField.sendKeys(ConfigurationReader.getProperty("all.pw"));
-            lgnP.loginBtn.click();
-            BrowserUtils.waitForPresenceOfElement(By.className("oro-subtitle"),25);
-            fMGeneral.salesStoreFleetBtn.click();
-            fMGeneral.vehiclesBtn.click();
-        }  else if (userType.equalsIgnoreCase("Store Manager")) {
-            lgnP.usernameField.sendKeys(ConfigurationReader.getProperty("storemanager.username"));
-            lgnP.passwordField.sendKeys(ConfigurationReader.getProperty("all.pw"));
-            lgnP.loginBtn.click();
-            BrowserUtils.waitForPresenceOfElement(By.className("oro-subtitle"),25);
-            fMGeneral.salesStoreFleetBtn.click();
-            fMGeneral.vehiclesBtn.click();
-        }
-
-    }
 
 
 
@@ -199,5 +144,17 @@ public class FilterMenuGeneral {
     }
 
 
+    @And("The user click on {string} ,{string} , {string}")
+    public void theUserClickOn(String filter1, String filter2, String filter3) {
+        fMGeneral.findFilter(filter1).click();
+        fMGeneral.findFilter(filter2).click();
+        fMGeneral.findFilter(filter3).click();
+    }
 
+    @Then("Verify that {string}, {string} and {string} options are selected")
+    public void verifyThatAndOptionsAreSelected(String filter1, String filter2, String filter3) {
+        assertTrue(fMGeneral.findFilter(filter1).isSelected());
+        assertTrue(fMGeneral.findFilter(filter2).isSelected());
+        assertTrue(fMGeneral.findFilter(filter3).isSelected());
+    }
 }

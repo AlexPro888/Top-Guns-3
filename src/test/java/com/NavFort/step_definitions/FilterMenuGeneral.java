@@ -11,11 +11,13 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 
 import java.util.Arrays;
 import java.util.List;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
+
 
 public class FilterMenuGeneral {
     LoginPage lgnP = new LoginPage();
@@ -92,6 +94,7 @@ public class FilterMenuGeneral {
 
     @Then("The user should see manage filters menu's contains filters")
     public void theUserShouldSeeManageFiltersMenuSContainsFilters() {
+        /*
         assertEquals("License Plate",fMGeneral.filters.get(0).getText().trim());
         assertEquals("Tags",fMGeneral.filters.get(1).getText().trim());
         assertEquals("Driver",fMGeneral.filters.get(2).getText().trim());
@@ -111,6 +114,18 @@ public class FilterMenuGeneral {
         assertEquals("Horsepower",fMGeneral.filters.get(16).getText().trim());
         assertEquals("Horsepower Taxation",fMGeneral.filters.get(17).getText().trim());
         assertEquals("Power (KW)",fMGeneral.filters.get(18).getText().trim());
+
+         */
+
+        List<String> expectedFilters= Arrays.asList("License Plate","Tags","Driver","Location","Chassis Number","Model Year","Last Odometer","Immatriculation Date","First Contract Date","Catalog Value (VAT Incl.)","Seats Number","Doors Number","Color","Transmission","Fuel Type","CO2 Emissions","Horsepower","Horsepower Taxation","Power (KW)");
+
+        for (int i = 0; i < expectedFilters.size(); i++) {
+            String expectedValue=expectedFilters.get(i);
+            WebElement filter= fMGeneral.filters.get(i);
+            String actualValue=filter.getText().trim();
+            assertEquals(expectedValue,actualValue);
+
+        }
 
 
 

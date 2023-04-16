@@ -1,9 +1,10 @@
+@NAV10-521
 Feature: Filter Menu(General)
   User Story :
   As a user, I should be able to filter the vehicle table, in the Fleet-Vehicle page
 
 
-  #@wip
+  @NAV10-517
   Scenario Outline: "Manage Filter" button should be visible
     Given The "<userType>" is already on the Fleet Management page
     When  The "<userType>" is click the fleet menu and than click vehicles button
@@ -15,7 +16,7 @@ Feature: Filter Menu(General)
       | Sales Manager |
       | Store Manager |
 
-    #@wip
+  @NAV10-518
   Scenario Outline:  "Manage Filters" menu contains the filters
     Given The "<userType>" is already on the Fleet Management page
     When  The "<userType>" is click the fleet menu and than click vehicles button
@@ -28,7 +29,7 @@ Feature: Filter Menu(General)
       | Sales Manager |
       | Store Manager |
 
-  @wip
+  @NAV10-519
   Scenario Outline: The user can find filters by typing the filter name, through the 'Manage Filters' menu.
     Given The "<userType>" is already on the Fleet Management page
     When  The "<userType>" is click the fleet menu and than click vehicles button
@@ -41,7 +42,7 @@ Feature: Filter Menu(General)
       | Sales Manager | Location    |
       | Store Manager | Horsepower  |
 
-
+  @NAV10-520
   Scenario Outline: The user can apply multiple filters at the same time
     Given The "<userType>" is already on the Fleet Management page
     When  The "<userType>" is click the fleet menu and than click vehicles button

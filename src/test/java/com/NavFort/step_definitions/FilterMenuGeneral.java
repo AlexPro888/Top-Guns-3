@@ -5,11 +5,17 @@ import com.NavFort.pages.LoginPage;
 import com.NavFort.utilities.BrowserUtils;
 import com.NavFort.utilities.ConfigurationReader;
 import com.NavFort.utilities.Driver;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.By;
+
+import java.util.Arrays;
+import java.util.List;
+
+import static org.junit.Assert.assertEquals;
 
 public class FilterMenuGeneral {
     LoginPage lgnP = new LoginPage();
@@ -29,7 +35,7 @@ public class FilterMenuGeneral {
             lgnP.loginBtn.click();
             BrowserUtils.waitForPresenceOfElement(By.className("oro-subtitle"),25);
         }  else if (userType.equalsIgnoreCase("Store Manager")) {
-        lgnP.usernameField.sendKeys(ConfigurationReader.getProperty("salesmanager.username"));
+        lgnP.usernameField.sendKeys(ConfigurationReader.getProperty("storemanager.username"));
         lgnP.passwordField.sendKeys(ConfigurationReader.getProperty("all.pw"));
         lgnP.loginBtn.click();
             BrowserUtils.waitForPresenceOfElement(By.className("oro-subtitle"),25);
@@ -73,17 +79,47 @@ public class FilterMenuGeneral {
         String expected = "Manage filters";
         String actual= fMGeneral.manageFiltersBtn.getAttribute("textContent").trim();
         System.out.println("actual = " + actual);
-        Assert.assertEquals("Manage filters Failed!!!",expected,actual);
+        assertEquals("Manage filters Failed!!!",expected,actual);
 
     }
 
 
+    @And("The user click {string} button")
+    public void theUserClickButton(String manageFilters) {
+        fMGeneral.manageFiltersBtn.click();
+
+    }
+
+    @Then("The user should see manage filters menu's contains filters")
+    public void theUserShouldSeeManageFiltersMenuSContainsFilters() {
+        assertEquals("License Plate",fMGeneral.filters.get(0).getText().trim());
+        assertEquals("Tags",fMGeneral.filters.get(1).getText().trim());
+        assertEquals("Driver",fMGeneral.filters.get(2).getText().trim());
+        assertEquals("Location",fMGeneral.filters.get(3).getText().trim());
+        assertEquals("Chassis Number",fMGeneral.filters.get(4).getText().trim());
+        assertEquals("Model Year",fMGeneral.filters.get(5).getText().trim());
+        assertEquals("Last Odometer",fMGeneral.filters.get(6).getText().trim());
+        assertEquals("Immatriculation Date",fMGeneral.filters.get(7).getText().trim());
+        assertEquals("First Contract Date",fMGeneral.filters.get(8).getText().trim());
+        assertEquals("Catalog Value (VAT Incl.)",fMGeneral.filters.get(9).getText().trim());
+        assertEquals("Seats Number",fMGeneral.filters.get(10).getText().trim());
+        assertEquals("Doors Number",fMGeneral.filters.get(11).getText().trim());
+        assertEquals("Color",fMGeneral.filters.get(12).getText().trim());
+        assertEquals("Transmission",fMGeneral.filters.get(13).getText().trim());
+        assertEquals("Fuel Type",fMGeneral.filters.get(14).getText().trim());
+        assertEquals("CO2 Emissions",fMGeneral.filters.get(15).getText().trim());
+        assertEquals("Horsepower",fMGeneral.filters.get(16).getText().trim());
+        assertEquals("Horsepower Taxation",fMGeneral.filters.get(17).getText().trim());
+        assertEquals("Power (KW)",fMGeneral.filters.get(18).getText().trim());
 
 
 
+       /*
+        List<String> filters= Arrays.asList("License Plate","Tags","Driver","Location","Chassis Number","Model Year","Last Odometer","Immatriculation Date","First Contract Date","Catalog Value(VAT Incl)","Seats Number","Doors Number","Color","Transmission","Fuel Type","CO2 Emissions","Horsepower","HorsepowerTaxation","Power(kW)");
+         int expectedSize = filters.size();
+         int actualSize= fMGeneral.filters.size();
+         Assert.assertEquals(expectedSize,actualSize);
 
-
-
-
-
+        */
+    }
 }

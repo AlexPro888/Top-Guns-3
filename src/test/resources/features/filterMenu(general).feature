@@ -30,16 +30,16 @@ Feature: Filter Menu(General)
 
   @wip
   Scenario Outline: The user can find filters by typing the filter name, through the 'Manage Filters' menu.
-
-    Given The user is already on the Fleet Management page
-    When  The user is click the fleet menu and than click vehicles button
+    Given The "<userType>" is already on the Fleet Management page
+    When  The "<userType>" is click the fleet menu and than click vehicles button
     And   The user click the filter icon
     And  The user click "Manage filters" button
     Then  The user types "<filtersName>" on the filter input box and displayed on the screen
-
     Examples:
-      | filtersName |
-      | Tags        |
-      | Location    |
-      | Horsepower  |
+      | userType      | filtersName |
+      | Driver        | Tags        |
+      | Sales Manager | Location    |
+      | Store Manager | Horsepower  |
+
+
 

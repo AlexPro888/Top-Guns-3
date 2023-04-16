@@ -188,28 +188,13 @@ public class FilterMenuGeneral {
 
 
 
-    @Given("The user is already on the Fleet Management page")
-    public void theUserIsAlreadyOnTheFleetManagementPage() {
-        Driver.getDriver().get(ConfigurationReader.getProperty("url"));
-        lgnP.usernameField.sendKeys(ConfigurationReader.getProperty("driver.username"));
-        lgnP.passwordField.sendKeys(ConfigurationReader.getProperty("all.pw"));
-        lgnP.loginBtn.click();
-        BrowserUtils.waitForPresenceOfElement(By.className("oro-subtitle"),25);
-    }
 
-    @When("The user is click the fleet menu and than click vehicles button")
-    public void theUserIsClickTheFleetMenuAndThanClickVehiclesButton() {
-        fMGeneral.driverFleetBtn.click();
-        fMGeneral.vehiclesBtn.click();
-
-    }
     @Then("The user types {string} on the filter input box and displayed on the screen")
     public void theUserTypesOnTheFilterInputBoxAndDisplayedOnTheScreen(String filtersName) {
-        Driver.getDriver().findElement(By.xpath("//input[@type='search']")).sendKeys(filtersName);
+        fMGeneral.filterSearchBox.sendKeys(filtersName);
         BrowserUtils.waitFor(2);
         fMGeneral.findFilter(filtersName);
         assertTrue(fMGeneral.findFilter(filtersName).isDisplayed());
-
 
     }
 

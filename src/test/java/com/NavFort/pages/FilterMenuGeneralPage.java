@@ -32,14 +32,15 @@ public class FilterMenuGeneralPage {
 
     @FindBy(xpath = "//ul[@class='ui-multiselect-checkboxes ui-helper-reset fixed-li']/li")
     public List<WebElement> filters;
-    /*
-    @FindBy(xpath = "//div[@class='ui-corner-all ui-multiselect-header ui-helper-clearfix ui-multiselect-hasfilter']/div/input")
+
+    @FindBy(xpath = "//input[@type='search']")
     public WebElement filterSearchBox;
 
-     */
+
 
     public WebElement findFilter(String searchFilter) {
-        return Driver.getDriver().findElement(By.xpath( "//input[@value='"+searchFilter+"']"));
+        String typeLocator="//input[@value='"+searchFilter+"']";
+        return Driver.getDriver().findElement(By.xpath( typeLocator));
     }
 
 

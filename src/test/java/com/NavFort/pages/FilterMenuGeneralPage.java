@@ -23,7 +23,7 @@ public class FilterMenuGeneralPage {
     @FindBy(xpath = "//span[.='Vehicles']")
     public WebElement vehiclesBtn;
 
-    @FindBy(xpath ="//a[@title='Filters']/i")
+    @FindBy(xpath ="//a[@title='Filters']")
     public WebElement filterIcon;
 
     @FindBy(xpath = "//button[@type='button']/a")

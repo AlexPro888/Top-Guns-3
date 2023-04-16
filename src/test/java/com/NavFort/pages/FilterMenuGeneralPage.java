@@ -1,6 +1,7 @@
 package com.NavFort.pages;
 
 import com.NavFort.utilities.Driver;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -31,6 +32,18 @@ public class FilterMenuGeneralPage {
 
     @FindBy(xpath = "//ul[@class='ui-multiselect-checkboxes ui-helper-reset fixed-li']/li")
     public List<WebElement> filters;
+    /*
+    @FindBy(xpath = "//div[@class='ui-corner-all ui-multiselect-header ui-helper-clearfix ui-multiselect-hasfilter']/div/input")
+    public WebElement filterSearchBox;
+
+     */
+
+    public WebElement findFilter(String searchFilter) {
+        return Driver.getDriver().findElement(By.xpath( "//input[@value='"+searchFilter+"']"));
+    }
+
+
+
 
 
 

@@ -13,6 +13,7 @@ import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -128,7 +129,6 @@ public class FilterMenuGeneral {
         }
 
 
-
        /*
         List<String> filters= Arrays.asList("License Plate","Tags","Driver","Location","Chassis Number","Model Year","Last Odometer","Immatriculation Date","First Contract Date","Catalog Value(VAT Incl)","Seats Number","Doors Number","Color","Transmission","Fuel Type","CO2 Emissions","Horsepower","HorsepowerTaxation","Power(kW)");
          int expectedSize = filters.size();
@@ -137,4 +137,82 @@ public class FilterMenuGeneral {
 
         */
     }
+    /*
+    @And("The user types {string} on the filter input box")
+    public void theUserTypesOnTheFilterInputBox(String filtersName) {
+        fMGeneral.filterSearchBox.sendKeys(filtersName);
+
+    }
+
+
+
+    @Then("The user should see {string} on the filters menu board")
+    public void theUserShouldSeeOnTheFiltersMenuBoard(String filtersName) {
+        List < String> filNames= new ArrayList<>();
+        for (WebElement filter : fMGeneral.filters) {
+            filNames.add(filter.getText().trim());
+        }
+      assertTrue(filNames.contains(filtersName));
+
+    }
+
+     */
+
+    @Given("The {string} is already on the Fleet Management page and click the fleet menu and than click vehicles button")
+    public void theIsAlreadyOnTheFleetManagementPageAndClickTheFleetMenuAndThanClickVehiclesButton(String userType) {
+        Driver.getDriver().get(ConfigurationReader.getProperty("url"));
+        if (userType.equalsIgnoreCase("Driver")){
+            lgnP.usernameField.sendKeys(ConfigurationReader.getProperty("driver.username"));
+            lgnP.passwordField.sendKeys(ConfigurationReader.getProperty("all.pw"));
+            lgnP.loginBtn.click();
+            BrowserUtils.waitForPresenceOfElement(By.className("oro-subtitle"),25);
+            fMGeneral.driverFleetBtn.click();
+            fMGeneral.vehiclesBtn.click();
+        } else if (userType.equalsIgnoreCase("Sales Manager")) {
+            lgnP.usernameField.sendKeys(ConfigurationReader.getProperty("salesmanager.username"));
+            lgnP.passwordField.sendKeys(ConfigurationReader.getProperty("all.pw"));
+            lgnP.loginBtn.click();
+            BrowserUtils.waitForPresenceOfElement(By.className("oro-subtitle"),25);
+            fMGeneral.salesStoreFleetBtn.click();
+            fMGeneral.vehiclesBtn.click();
+        }  else if (userType.equalsIgnoreCase("Store Manager")) {
+            lgnP.usernameField.sendKeys(ConfigurationReader.getProperty("storemanager.username"));
+            lgnP.passwordField.sendKeys(ConfigurationReader.getProperty("all.pw"));
+            lgnP.loginBtn.click();
+            BrowserUtils.waitForPresenceOfElement(By.className("oro-subtitle"),25);
+            fMGeneral.salesStoreFleetBtn.click();
+            fMGeneral.vehiclesBtn.click();
+        }
+
+    }
+
+
+
+    @Given("The user is already on the Fleet Management page")
+    public void theUserIsAlreadyOnTheFleetManagementPage() {
+        Driver.getDriver().get(ConfigurationReader.getProperty("url"));
+        lgnP.usernameField.sendKeys(ConfigurationReader.getProperty("driver.username"));
+        lgnP.passwordField.sendKeys(ConfigurationReader.getProperty("all.pw"));
+        lgnP.loginBtn.click();
+        BrowserUtils.waitForPresenceOfElement(By.className("oro-subtitle"),25);
+    }
+
+    @When("The user is click the fleet menu and than click vehicles button")
+    public void theUserIsClickTheFleetMenuAndThanClickVehiclesButton() {
+        fMGeneral.driverFleetBtn.click();
+        fMGeneral.vehiclesBtn.click();
+
+    }
+    @Then("The user types {string} on the filter input box and displayed on the screen")
+    public void theUserTypesOnTheFilterInputBoxAndDisplayedOnTheScreen(String filtersName) {
+        Driver.getDriver().findElement(By.xpath("//input[@type='search']")).sendKeys(filtersName);
+        BrowserUtils.waitFor(2);
+        fMGeneral.findFilter(filtersName);
+        assertTrue(fMGeneral.findFilter(filtersName).isDisplayed());
+
+
+    }
+
+
+
 }

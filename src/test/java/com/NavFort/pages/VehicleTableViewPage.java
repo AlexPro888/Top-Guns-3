@@ -48,7 +48,7 @@ public WebElement viewPerPageOption25;
     public WebElement viewPerPageOption50;
     @FindBy(xpath = "//*[@href='#' and @data-size='100']")
     public WebElement viewPerPageOption100;
-    @FindBy(xpath = "//*[contains(@class,'grid-header-cell-ModelYear sortable')]")
+    @FindBy(xpath = "//tr/th[6]")
     public WebElement modelYear;
 
     @FindBy(xpath = "//tbody/tr[1]/td[6]")

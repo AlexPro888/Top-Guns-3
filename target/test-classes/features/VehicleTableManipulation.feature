@@ -26,3 +26,13 @@ Scenario: Validate the user can sort a column in ascending order by clicking the
   And user is on the Cars page
   And user clicks on the Model Year column
   Then Model Year column is in ascending order
+@NAV10-522
+  Scenario: 4- Validate the user can remove all sorts and filters on the page by using the reset button
+    When user hover over "Fleet" button
+    And user clicks on "Vehicles" button
+    And user is on the Cars page
+    And user clicks on the filters button
+    And user clicks on Manage filters button
+    And user add one filter
+    And user clicks on the reset button
+    Then all filters are removed

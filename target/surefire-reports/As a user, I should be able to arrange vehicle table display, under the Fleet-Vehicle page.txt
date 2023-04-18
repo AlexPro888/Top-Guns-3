@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: As a user, I should be able to arrange vehicle table display, under the Fleet-Vehicle page
+-------------------------------------------------------------------------------
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 49.476 s - in As a user, I should be able to arrange vehicle table display, under the Fleet-Vehicle page

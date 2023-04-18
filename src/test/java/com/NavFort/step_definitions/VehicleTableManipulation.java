@@ -62,7 +62,7 @@ public class VehicleTableManipulation {
 
     @Then("Model Year column is in ascending order")
     public void modelYearColumnIsInAscendingOrder() {
-        BrowserUtils.sleep(5);
+        //BrowserUtils.sleep(5);
         int firstRecordedYearValue = Integer.parseInt(vehicleTableViewPage.firstRecordedYear.getText());
         int lastRecordedYearValue = Integer.parseInt(vehicleTableViewPage.lastRecordedYear.getText());
         Assert.assertTrue(firstRecordedYearValue<lastRecordedYearValue);

@@ -1,4 +1,4 @@
-@NAV10-226 @smoke
+@NAV10-226 @smoke @regression
 Feature: As a Store Manager, I should be able to add an event
 
   Background:  The user is on the vehicles page

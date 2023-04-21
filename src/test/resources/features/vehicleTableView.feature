@@ -1,4 +1,4 @@
-@NAV10-495
+@NAV10-495 @smoke
 Feature: As a driver, I should be able to see vehicle table view
 
   Background: Given the user is already logged in as a driver

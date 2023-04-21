@@ -1,4 +1,4 @@
-@NAV10-521
+@NAV10-521 @smoke
 Feature: Filter Menu(General)
   User Story :
   As a user, I should be able to filter the vehicle table, in the Fleet-Vehicle page

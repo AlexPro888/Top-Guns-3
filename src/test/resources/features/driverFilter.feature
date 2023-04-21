@@ -1,4 +1,4 @@
-@NAV10-516
+@NAV10-516 @smoke
 Feature: As a Driver, I should be able to use the Driver filter
 
   Background:  The user is already logged in as a driver

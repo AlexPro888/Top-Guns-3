@@ -1,4 +1,4 @@
-@NAV10-222
+@NAV10-222 @smoke
 Feature: As a user, I should be able to arrange vehicle table display, under the Fleet-Vehicle page
 
   Background: Given the user is already logged in as a driver

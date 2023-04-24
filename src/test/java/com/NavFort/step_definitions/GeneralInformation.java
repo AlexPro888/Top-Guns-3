@@ -17,26 +17,26 @@ import static org.junit.Assert.assertTrue;
 
 public class GeneralInformation {
     GeneralInformationPage generalInformationPage = new GeneralInformationPage();
-
+    int timeForExplicitWaits = 60;
 
     @Then("{string} hover over Fleet tab and click vehicles button")
-    public void hover_over_tab(String user) throws InterruptedException {
+    public void hover_over_tab(String user) {
         if (user.toLowerCase().contains("driver")) {
             BrowserUtils.waitFor(3);
             BrowserUtils.hover(generalInformationPage.fleetBtnDriver);
             generalInformationPage.fleetBtnDriver.click();
-            Thread.sleep(1000);
+            BrowserUtils.waitForClickablility(generalInformationPage.vehicleOption, timeForExplicitWaits);
             generalInformationPage.vehicleOption.click();
         } else if (user.toLowerCase().contains("sales")) {
             BrowserUtils.waitFor(3);
             BrowserUtils.hover(generalInformationPage.fleetBtnSManager);
-            Thread.sleep(5000);
+            BrowserUtils.waitForClickablility(generalInformationPage.vehicleOption, timeForExplicitWaits);
             generalInformationPage.vehicleOption.click();
         } else if (user.toLowerCase().contains("store")) {
-            Thread.sleep(5000);
             BrowserUtils.hover(generalInformationPage.fleetBtnSManager);
+            BrowserUtils.waitForClickablility(generalInformationPage.vehicleOption, timeForExplicitWaits);
             generalInformationPage.vehicleOption.click();
-            Thread.sleep(5000);
+            BrowserUtils.waitFor(3);
         }
     }
 
@@ -46,73 +46,74 @@ public class GeneralInformation {
         assertTrue(generalInformationPage.vehiclesTable.isDisplayed());
     }
 
-    @When("{string} click on any vehicle row")
-    public void clickOnAnyVehicleRow(String user) throws InterruptedException {
-
-        Thread.sleep(2000);
+    @When("User click on any vehicle row")
+    public void clickOnAnyVehicleRow() {
+        BrowserUtils.waitFor(3);
         List<WebElement> allVehicles = Driver.getDriver().findElements(By.xpath("//tbody/tr"));
         System.out.println("allVehicles.size() = " + allVehicles.size());
-        int randomIndex = new Random().nextInt(allVehicles.size() - 1)+1;
+        int randomIndex = new Random().nextInt(allVehicles.size() - 1) + 1;
         System.out.println("randomIndex = " + randomIndex);
-        Thread.sleep(3000);
-        BrowserUtils.waitForClickablility(allVehicles.get(randomIndex), 5);
-        BrowserUtils.waitForPageToLoad(15);
-        BrowserUtils.waitForVisibility(allVehicles.get(randomIndex), 5);
+        BrowserUtils.waitForClickablility(allVehicles.get(randomIndex), timeForExplicitWaits);
+        BrowserUtils.waitForPageToLoad(timeForExplicitWaits);
+        BrowserUtils.waitForVisibility(allVehicles.get(randomIndex), timeForExplicitWaits);
         allVehicles.get(randomIndex).click();
-        Thread.sleep(3000);
+        BrowserUtils.waitFor(3);
     }
 
-    @Then("{string} should see the General Information page")
-    public void shouldSeeTheGeneralInformationPage(String user) {
-        BrowserUtils.waitForPageToLoad(5);
+    @Then("User should see the General Information header")
+    public void shouldSeeTheGeneralInformationHeader() {
+        BrowserUtils.waitForPageToLoad(timeForExplicitWaits);
         Assert.assertTrue(generalInformationPage.generalInformationHeader.isDisplayed());
     }
 
-    @Then("{string} should see the Cars table")
-    public void should_see_the_cars_table(String string) {
+    @Then("User should see the Cars table")
+    public void should_see_the_cars_table() {
         Assert.assertTrue(generalInformationPage.carsTable.isDisplayed());
     }
 
     @And("{string} should see the ellipsis icon and hover over ellipsis then click the Eye icon")
-    public void shouldSeeTheEllipsisIconAndHoverOverEllipsisThenClickTheEyeIcon(String user) throws InterruptedException {
-        Thread.sleep(2000);
+    public void shouldSeeTheEllipsisIconAndHoverOverEllipsisThenClickTheEyeIcon(String user) {
+        BrowserUtils.waitFor(3);
         String locatorEllipsis;
         List<WebElement> allVehicles = Driver.getDriver().findElements(By.xpath("//tbody/tr"));
         int randomIndex = new Random().nextInt(allVehicles.size()) + 1;
         System.out.println("randomIndex = " + randomIndex);
-        BrowserUtils.waitForPageToLoad(15);
+        BrowserUtils.waitForPageToLoad(timeForExplicitWaits);
+
         if (user.equalsIgnoreCase("driver")) {
             locatorEllipsis = "//tbody/tr[%s]/td[20]";
 
         } else {
 
-            BrowserUtils.waitForVisibility(allVehicles.get(randomIndex), 5);
+            BrowserUtils.waitForVisibility(allVehicles.get(randomIndex), timeForExplicitWaits);
             locatorEllipsis = "//tbody/tr[%s]/td[21]";
         }
         locatorEllipsis = String.format(locatorEllipsis, randomIndex);
+        System.out.println("locatorEllipsis = " + locatorEllipsis);
+
         WebElement ellipsis = Driver.getDriver().findElement(By.xpath(locatorEllipsis));
-        BrowserUtils.waitForVisibility(ellipsis, 5);
+        BrowserUtils.waitForVisibility(ellipsis, timeForExplicitWaits);
         Assert.assertTrue(ellipsis.isDisplayed());
         BrowserUtils.hover(ellipsis);
-        Thread.sleep(10000);
+        BrowserUtils.waitForClickablility(generalInformationPage.eyeIcon, timeForExplicitWaits);
         generalInformationPage.eyeIcon.click();
     }
 
-    @And("{string} should see the Edit button")
-    public void shouldSeeTheEditButton(String user) throws InterruptedException {
-        Thread.sleep(5000);
+    @And("User should see the Edit button")
+    public void shouldSeeTheEditButton() {
+        BrowserUtils.waitForVisibility(generalInformationPage.editBtn, timeForExplicitWaits);
         Assert.assertTrue(generalInformationPage.editBtn.isDisplayed());
     }
 
-    @And("{string} should see the Delete button")
-    public void shouldSeeTheDeleteButton(String user) throws InterruptedException {
-        Thread.sleep(5000);
+    @And("User should see the Delete button")
+    public void shouldSeeTheDeleteButton() {
+        BrowserUtils.waitForVisibility(generalInformationPage.deleteBtn, timeForExplicitWaits);
         Assert.assertTrue(generalInformationPage.deleteBtn.isDisplayed());
     }
 
-    @And("{string} should see the Add Event button")
-    public void shouldSeeTheAddEventButton(String user) throws InterruptedException {
-        Thread.sleep(5000);
+    @And("User should see the Add Event button")
+    public void shouldSeeTheAddEventButton() {
+        BrowserUtils.waitForVisibility(generalInformationPage.addEventBtn, timeForExplicitWaits);
         Assert.assertTrue(generalInformationPage.addEventBtn.isDisplayed());
     }
 }

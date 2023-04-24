@@ -7,8 +7,8 @@ Feature:
     Given User is on the login page
     Then User logs in as a "<user>"
     And "<user>" hover over Fleet tab and click vehicles button
-    When "<user>" click on any vehicle row
-    Then "<user>" should see the General Information page
+    When User click on any vehicle row
+    Then User should see the General Information header
 
     Examples:
       | user          |
@@ -21,9 +21,9 @@ Feature:
     Given User is on the login page
     Then User logs in as a "<user>"
     And "<user>" hover over Fleet tab and click vehicles button
-    Then "<user>" should see the Cars table
+    Then User should see the Cars table
     And "<user>" should see the ellipsis icon and hover over ellipsis then click the Eye icon
-    Then "<user>" should see the General Information page
+    Then User should see the General Information header
 
     Examples:
       | user          |
@@ -36,12 +36,12 @@ Feature:
     Given User is on the login page
     Then User logs in as a "<user>"
     And "<user>" hover over Fleet tab and click vehicles button
-    Then "<user>" should see the Cars table
+    Then User should see the Cars table
     And "<user>" should see the ellipsis icon and hover over ellipsis then click the Eye icon
-    Then "<user>" should see the General Information page
-    And "<user>" should see the Edit button
-    And "<user>" should see the Delete button
-    And "<user>" should see the Add Event button
+    Then User should see the General Information header
+    And User should see the Edit button
+    And User should see the Delete button
+    And User should see the Add Event button
 
     Examples:
       | user          |

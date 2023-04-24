@@ -7,7 +7,7 @@ import org.openqa.selenium.support.PageFactory;
 
 public class GeneralInformationPage {
     public GeneralInformationPage() {
-        PageFactory.initElements(Driver.getDriver(),this);
+        PageFactory.initElements(Driver.getDriver(), this);
     }
 
     @FindBy(xpath = "(//span[@class='title title-level-1'])[1]")
@@ -28,18 +28,16 @@ public class GeneralInformationPage {
     @FindBy(xpath = "//table[@class='grid table-hover table table-bordered table-condensed']")
     public WebElement carsTable;
 
-//    @FindBy(xpath = "//tbody/tr/td[20]")
-//    public WebElement ellipsisForDriver;
-//
-//    @FindBy(xpath = "//tbody/tr/td[21]")
-//    public WebElement ellipsisForManagers;
-
-//    @FindBy(xpath = "//i[@class='fa-eye hide-text']")
-//    public WebElement eyeIcon;
-
     @FindBy(css = ".fa-eye.hide-text")
     public WebElement eyeIcon;
+
     @FindBy(xpath = "//a[@class='btn back icons-holder-text edit-button main-group']")
+    public WebElement editBtn;
+
+    @FindBy(xpath = "//a[@class=' btn icons-holder-text no-hash remove-button']")
     public WebElement deleteBtn;
+
+    @FindBy(css = ".fa-clock-o.hide-text")
+    public WebElement addEventBtn;
 
 }

@@ -40,13 +40,11 @@ public class GeneralInformation {
         }
     }
 
-
     @Then("{string} should see a table with all vehicle information displayed")
     public void user_should_see_a_table_with_all_vehicle_information_displayed() {
         BrowserUtils.waitForPageToLoad(5);
         assertTrue(generalInformationPage.vehiclesTable.isDisplayed());
     }
-
 
     @When("{string} click on any vehicle row")
     public void clickOnAnyVehicleRow(String user) throws InterruptedException {
@@ -73,6 +71,7 @@ public class GeneralInformation {
     public void should_see_the_cars_table(String string) {
         Assert.assertTrue(generalInformationPage.carsTable.isDisplayed());
     }
+
     @And("{string} should see the ellipsis icon and hover over ellipsis then click the Eye icon")
     public void shouldSeeTheEllipsisIconAndHoverOverEllipsisThenClickTheEyeIcon(String user) throws InterruptedException {
         Thread.sleep(2000);
@@ -90,14 +89,29 @@ public class GeneralInformation {
             locatorEllipsis = "//tbody/tr[%s]/td[21]";
         }
         locatorEllipsis = String.format(locatorEllipsis, randomIndex);
-
         WebElement ellipsis = Driver.getDriver().findElement(By.xpath(locatorEllipsis));
         Assert.assertTrue(ellipsis.isDisplayed());
         BrowserUtils.hover(ellipsis);
         generalInformationPage.eyeIcon.click();
     }
 
+    @And("{string} should see the Edit button")
+    public void shouldSeeTheEditButton(String user) throws InterruptedException {
+        Thread.sleep(3000);
+        Assert.assertTrue(generalInformationPage.editBtn.isDisplayed());
+    }
 
+    @And("{string} should see the Delete button")
+    public void shouldSeeTheDeleteButton(String user) throws InterruptedException {
+        Thread.sleep(3000);
+        Assert.assertTrue(generalInformationPage.deleteBtn.isDisplayed());
+    }
+
+    @And("{string} should see the Add Event button")
+    public void shouldSeeTheAddEventButton(String user) throws InterruptedException {
+        Thread.sleep(3000);
+        Assert.assertTrue(generalInformationPage.addEventBtn.isDisplayed());
+    }
 }
 
 

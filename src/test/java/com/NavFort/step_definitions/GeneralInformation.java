@@ -3,17 +3,14 @@ package com.NavFort.step_definitions;
 import com.NavFort.pages.GeneralInformationPage;
 import com.NavFort.utilities.BrowserUtils;
 import com.NavFort.utilities.Driver;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Random;
 
 import static org.junit.Assert.assertTrue;
@@ -27,8 +24,8 @@ public class GeneralInformation {
         if (user.toLowerCase().contains("driver")) {
             BrowserUtils.waitFor(3);
             BrowserUtils.hover(generalInformationPage.fleetBtnDriver);
-           generalInformationPage.fleetBtnDriver.click();
-           Thread.sleep(1000);
+            generalInformationPage.fleetBtnDriver.click();
+            Thread.sleep(1000);
             generalInformationPage.vehicleOption.click();
         } else if (user.toLowerCase().contains("sales")) {
             BrowserUtils.waitFor(3);
@@ -60,9 +57,9 @@ public class GeneralInformation {
         int randomIndex = new Random().nextInt(allVehicles.size()) + 1;
         System.out.println("randomIndex = " + randomIndex);
         Thread.sleep(3000);
-        BrowserUtils.waitForClickablility(allVehicles.get(randomIndex),5);
+        BrowserUtils.waitForClickablility(allVehicles.get(randomIndex), 5);
         BrowserUtils.waitForPageToLoad(15);
-        BrowserUtils.waitForVisibility(allVehicles.get(randomIndex),5);
+        BrowserUtils.waitForVisibility(allVehicles.get(randomIndex), 5);
         allVehicles.get(randomIndex).click();
         Thread.sleep(3000);
     }
@@ -71,6 +68,36 @@ public class GeneralInformation {
     public void shouldSeeTheGeneralInformationPage(String user) {
         Assert.assertTrue(generalInformationPage.generalInformationHeader.isDisplayed());
     }
+
+    @Then("{string} should see the Cars table")
+    public void should_see_the_cars_table(String string) {
+        Assert.assertTrue(generalInformationPage.carsTable.isDisplayed());
+    }
+    @And("{string} should see the ellipsis icon and hover over ellipsis then click the Eye icon")
+    public void shouldSeeTheEllipsisIconAndHoverOverEllipsisThenClickTheEyeIcon(String user) throws InterruptedException {
+        Thread.sleep(2000);
+        String locatorEllipsis;
+        List<WebElement> allVehicles = Driver.getDriver().findElements(By.xpath("//tbody/tr"));
+        int randomIndex = new Random().nextInt(allVehicles.size()) + 1;
+        System.out.println("randomIndex = " + randomIndex);
+        BrowserUtils.waitForPageToLoad(15);
+        if (user.equalsIgnoreCase("driver")) {
+            locatorEllipsis = "//tbody/tr[%s]/td[20]";
+
+        } else {
+
+            BrowserUtils.waitForVisibility(allVehicles.get(randomIndex), 5);
+            locatorEllipsis = "//tbody/tr[%s]/td[21]";
+        }
+        locatorEllipsis = String.format(locatorEllipsis, randomIndex);
+
+        WebElement ellipsis = Driver.getDriver().findElement(By.xpath(locatorEllipsis));
+        Assert.assertTrue(ellipsis.isDisplayed());
+        BrowserUtils.hover(ellipsis);
+        generalInformationPage.eyeIcon.click();
+    }
+
+
 }
 
 

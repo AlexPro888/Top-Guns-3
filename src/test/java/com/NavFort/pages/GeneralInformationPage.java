@@ -25,11 +25,21 @@ public class GeneralInformationPage {
     @FindBy(xpath = "//span[text()='General Information']")
     public WebElement generalInformationHeader;
 
-    @FindBy(xpath = "//table[@class='grid table-hover table table-bordered table-condensed']//tr[2]//td[20]")
-    public WebElement Ellipsis;
+    @FindBy(xpath = "//table[@class='grid table-hover table table-bordered table-condensed']")
+    public WebElement carsTable;
 
-    @FindBy(xpath = "//ul[@class='nav nav-pills icons-holder launchers-list']//li[1]")
-    public WebElement EyeIcon;
+//    @FindBy(xpath = "//tbody/tr/td[20]")
+//    public WebElement ellipsisForDriver;
+//
+//    @FindBy(xpath = "//tbody/tr/td[21]")
+//    public WebElement ellipsisForManagers;
 
+//    @FindBy(xpath = "//i[@class='fa-eye hide-text']")
+//    public WebElement eyeIcon;
+
+    @FindBy(css = ".fa-eye.hide-text")
+    public WebElement eyeIcon;
+    @FindBy(xpath = "//a[@class='btn back icons-holder-text edit-button main-group']")
+    public WebElement deleteBtn;
 
 }

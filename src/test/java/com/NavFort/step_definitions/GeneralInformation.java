@@ -52,7 +52,7 @@ public class GeneralInformation {
         Thread.sleep(2000);
         List<WebElement> allVehicles = Driver.getDriver().findElements(By.xpath("//tbody/tr"));
         System.out.println("allVehicles.size() = " + allVehicles.size());
-        int randomIndex = new Random().nextInt(allVehicles.size()) + 1;
+        int randomIndex = new Random().nextInt(allVehicles.size() - 1)+1;
         System.out.println("randomIndex = " + randomIndex);
         Thread.sleep(3000);
         BrowserUtils.waitForClickablility(allVehicles.get(randomIndex), 5);
@@ -64,6 +64,7 @@ public class GeneralInformation {
 
     @Then("{string} should see the General Information page")
     public void shouldSeeTheGeneralInformationPage(String user) {
+        BrowserUtils.waitForPageToLoad(5);
         Assert.assertTrue(generalInformationPage.generalInformationHeader.isDisplayed());
     }
 
@@ -90,26 +91,28 @@ public class GeneralInformation {
         }
         locatorEllipsis = String.format(locatorEllipsis, randomIndex);
         WebElement ellipsis = Driver.getDriver().findElement(By.xpath(locatorEllipsis));
+        BrowserUtils.waitForVisibility(ellipsis, 5);
         Assert.assertTrue(ellipsis.isDisplayed());
         BrowserUtils.hover(ellipsis);
+        Thread.sleep(10000);
         generalInformationPage.eyeIcon.click();
     }
 
     @And("{string} should see the Edit button")
     public void shouldSeeTheEditButton(String user) throws InterruptedException {
-        Thread.sleep(3000);
+        Thread.sleep(5000);
         Assert.assertTrue(generalInformationPage.editBtn.isDisplayed());
     }
 
     @And("{string} should see the Delete button")
     public void shouldSeeTheDeleteButton(String user) throws InterruptedException {
-        Thread.sleep(3000);
+        Thread.sleep(5000);
         Assert.assertTrue(generalInformationPage.deleteBtn.isDisplayed());
     }
 
     @And("{string} should see the Add Event button")
     public void shouldSeeTheAddEventButton(String user) throws InterruptedException {
-        Thread.sleep(3000);
+        Thread.sleep(5000);
         Assert.assertTrue(generalInformationPage.addEventBtn.isDisplayed());
     }
 }

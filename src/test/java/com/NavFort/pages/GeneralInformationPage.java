@@ -28,7 +28,8 @@ public class GeneralInformationPage {
     @FindBy(xpath = "//table[@class='grid table-hover table table-bordered table-condensed']")
     public WebElement carsTable;
 
-    @FindBy(css = ".fa-eye.hide-text")
+//    @FindBy(css = ".fa-eye.hide-text")
+    @FindBy(xpath = "//i[@class='fa-eye hide-text']")
     public WebElement eyeIcon;
 
     @FindBy(xpath = "//a[@class='btn back icons-holder-text edit-button main-group']")
